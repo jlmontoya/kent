@@ -5,9 +5,21 @@
 ##################################################
 DROP DATABASE IF EXISTS fashionne;
 CREATE DATABASE fashionne;
-GRANT ALL PRIVILEGES ON fashionne.* TO 'fashionne'@'localhost' IDENTIFIED BY 'usr_fashionne';
+GRANT ALL PRIVILEGES ON fashionne.* TO 'usr_fashionne'@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 USE fashionne;
+
+CREATE TABLE tbl_staff (
+     id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+     first_name VARCHAR( 25 ) NOT NULL ,
+     last_name VARCHAR( 25 ) NOT NULL ,
+     email VARCHAR( 25 ) NOT NULL UNIQUE,
+     password VARCHAR(100) NOT NULL,
+     date_created DATE NOT NULL
+);
+
+INSERT INTO tbl_staff (email,first_name, last_name , password , date_created) values ('admin@fashionne.com','John','Doe',md5('password'), now() );
+
 CREATE TABLE tbl_customer (
      id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY ,
      first_name VARCHAR( 25 ) NOT NULL ,

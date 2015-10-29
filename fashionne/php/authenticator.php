@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = mysql_real_escape_string($username);
         $password = mysql_real_escape_string($password);
         $password = md5($password);
-        
-        $result = $db->query("SELECT fname,lname,type FROM member WHERE email='$username' and password='$password'");
+
+        $result = $db->query("SELECT first_name,last_name FROM tbl_staff WHERE email='$username' and password='$password'");
         $count = mysqli_num_rows($result);
 
         if($count == 1 ) {
@@ -35,4 +35,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_close($db);
     }
 }
-            
