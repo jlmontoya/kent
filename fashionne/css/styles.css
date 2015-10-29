@@ -1,0 +1,111 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+.navbar-inverse {
+  background-color: #000;
+}
+.footer {
+
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  color:#9d9d9d;
+  background-color: #000;
+}
+
+.footer-contact-icons {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.footer-contact-icons a {
+    color: #9d9d9d;
+}
+
+.footer-contact-icons .fa {
+  font-size: 30px;
+  color: #9d9d9d;
+}
+
+.footer-contact-icons :hover {
+
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .copyright {
+  margin-top: -10px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar {
+  border-radius: 0 !important;
+}
+.carousel {
+  margin-bottom: 0px;
+}
+body {
+  background-color: #c2bfbd;
+}
+
+.marketing {
+  padding: 0px 0px 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color:#FFF;
+  background-color: #c2bfbd;
+  clear:both;
+}
+
+.carousel-caption-left  {
+  left:62%!important;
+}
+
+.carousel-caption-right {
+  right:70%!important;
+}
+
+.carousel-caption {
+  width:27%!important;
+}
+
+.pushdown {
+  position:absolute;
+  bottom: 0;
+}
+.thumbnail-noborder {
+  border: 0px!important;
+  background-color: #c2bfbd;
+}
+
+#signupForm .input-group {
+    margin-bottom: 10px;
+}
+
+.mr-top-20 {
+  margin-top: 20px;
+}
