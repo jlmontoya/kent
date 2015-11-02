@@ -14,9 +14,9 @@
             <div class="col-sm-4 col-sm-offset-4">
                 <h2>Find us on</h2>
                 <ul class="list-inline">
-                    <li><a href="javascritp:void(0)"><img src="img/fb_ico.png"/></a></li>
-                    <li><a href="javascritp:void(0)"><img src="img/twitter_ico.png"/></a></li>
-                    <li><a href="javascritp:void(0)"><img src="img/gplus_ico.png"/></a></li>
+                    <li><a href="javascritp:void(0)"><img src="../img/fb_ico.png"/></a></li>
+                    <li><a href="javascritp:void(0)"><img src="../img/twitter_ico.png"/></a></li>
+                    <li><a href="javascritp:void(0)"><img src="../img/gplus_ico.png"/></a></li>
                 </ul>
             </div>
         </div>
