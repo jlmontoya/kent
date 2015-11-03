@@ -42,14 +42,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="../index.php">Order Management <span class="sr-only">(current)</span></a></li>
-        <li><a href="../index.php">Customer Management <span class="sr-only">(current)</span></a></li>
-        <li><a href="../index.php">Product Management <span class="sr-only">(current)</span></a></li>
-        <li><a href="../index.php">Category Management <span class="sr-only">(current)</span></a></li>
-
-
-
-
+        <li><a href="order.php">Order Management <span class="sr-only">(current)</span></a></li>
+        <li><a href="cutomer.php">Customer Management <span class="sr-only">(current)</span></a></li>
+        <li><a href="product.php">Product Management <span class="sr-only">(current)</span></a></li>
+        <li><a href="category.php">Category Management <span class="sr-only">(current)</span></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
