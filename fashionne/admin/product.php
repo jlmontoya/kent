@@ -1,7 +1,7 @@
 <?php
   require_once('authenticate.php');
   include_once "connect.php";
-  $result = $db->query("SELECT p.id as id, p.name as name, c.name as category, p.price as price FROM tbl_product p join tbl_category c on p.category_id = c.id Order by p.name ASC");
+  $result = $db->query("SELECT p.id as id, p.name as name, p.size as size, c.name as category, p.price as price, p.photo_path as photo_path FROM tbl_product p join tbl_category c on p.category_id = c.id Order by p.name ASC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,9 @@
   <table class="table">
 
     <tr>
+      <th>Photo</th>
       <th>Name</th>
+      <th>Size</th>
       <th>Category</th>
       <th>Price</th>
       <th>Actions</th>
@@ -30,10 +32,12 @@
     <tbody>
     <?php while($row = $result->fetch_assoc()) { ?>
       <tr>
-        <td> <?php echo $row['name'] ?></td>
-        <td> <?php echo $row['category'] ?></td>
-        <td> <?php echo $row['price'] ?></td>
-        <td> <?php echo  "<a href='product_edit.php?edit=$row[id]'>Edit</a> / <a href='product_delete_svc.php?del=$row[id]'>Delete</a>";?></td>
+        <td style="vertical-align:middle"><img style="width:100px;height:100px;" class="thumbnail" src="<?php echo '../'.$row['photo_path'] ?>" alt="<?php echo $row['name'] ?>"></td>
+        <td style="vertical-align:middle"> <?php echo $row['name'] ?></td>
+        <td style="vertical-align:middle"> <?php echo $row['size'] ?></td>
+        <td style="vertical-align:middle"> <?php echo $row['category'] ?></td>
+        <td style="vertical-align:middle"> <?php echo $row['price'] ?></td>
+        <td style="vertical-align:middle"> <?php echo  "<a href='product_edit.php?edit=$row[id]'>Edit</a> / <a href='product_delete_svc.php?del=$row[id]'>Delete</a>";?></td>
       </tr>
     <?php }
         mysqli_free_result($result);

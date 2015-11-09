@@ -9,6 +9,5 @@ include_once "connect.php";
 		$db->query("UPDATE tbl_category SET name='$name' WHERE id= '$id' ");
 		header("Location: category.php");
 	}
-  mysqli_free_result($db);
   mysqli_close($db);
 ?>
