@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="panel panel-default mr-top-20">
-        <div class="panel-heading">Add a new Product</div>
+        <div class="panel-heading">Edit a Product</div>
         <div class="panel-body">
         <form id="signupForm" class="mr-top-20" method="POST" action="product_edit_svc.php" accept-charset="UTF-8" enctype="multipart/form-data">
           <div class="input-group">
@@ -66,13 +66,14 @@
           </div>
 
           <div class="input-group">
+            <img style="width:100px;height:100px;" class="thumbnail" src="<?php echo '../'.$row2['photo_path'] ?>" alt="<?php echo $row2['name'] ?>">
             <span class="btn btn-default btn-lg btn-file">
-            Upload Photo ... <input type="file" name="fileToUpload" id="fileToUpload">
-    </span>
+              Change Photo ... <input type="file" name="fileToUpload" id="fileToUpload">
+            </span><span id="fileName"></span>
           </div>
 
           <div class="form-group">
-            <input type="hidden" name="id" value="<?php echo $row['id']; ?>" id="id" />
+            <input type="hidden" name="id" value="<?php echo $row2['id']; ?>" id="id" />
             <button type="submit" id="btn-signup" class="btn btn-block btn-primary btn-lg">Save</button>
           </div>
         </form>
@@ -95,6 +96,10 @@
       $('#datetimepicker').datetimepicker({
         format: 'dd/MM/yyyy'
       });
+      $('#fileToUpload').change(function(){
+        $('#fileName').text($(this).val());
+      }
+      );
     </script>
   </body>
 </html>

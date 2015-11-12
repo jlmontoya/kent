@@ -61,8 +61,8 @@
 
           <div class="input-group">
             <span class="btn btn-default btn-lg btn-file">
-            Upload Photo ... <input type="file" name="fileToUpload" id="fileToUpload">
-    </span>
+              Upload Photo ... <input type="file" name="fileToUpload" id="fileToUpload">
+           </span><span id="fileName"></span>
           </div>
 
           <div class="form-group">
@@ -89,6 +89,10 @@
       $('#datetimepicker').datetimepicker({
         format: 'dd/MM/yyyy'
       });
+      $('#fileToUpload').change(function(){
+        $('#fileName').text($(this).val());
+      }
+      );
     </script>
   </body>
 </html>

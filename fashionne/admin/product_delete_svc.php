@@ -7,6 +7,7 @@
 		$result2 = $db->query("DELETE FROM tbl_product WHERE id='$id'");
 
 		 while($row = $result1->fetch_assoc()) {
+			 if(file_exists('../'.$row['photo_path']))
 			 	unlink('../'.$row['photo_path']);
 		 }
 
