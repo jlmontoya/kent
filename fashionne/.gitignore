@@ -1,1 +1,4 @@
 uploads/*.jpg
+!uploads/corporate*.jpg
+!uploads/sports*.jpg
+!uploads/work*.jpg
