@@ -22,14 +22,15 @@ INSERT INTO tbl_staff (email,first_name, last_name , password , date_created) va
 
 CREATE TABLE tbl_customer (
      id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-     first_name VARCHAR( 25 ) NOT NULL ,
-     last_name VARCHAR( 25 ) NOT NULL ,
-     email VARCHAR( 25 ) NOT NULL UNIQUE,
+     first_name VARCHAR( 100 ) NOT NULL ,
+     last_name VARCHAR( 100 ) NOT NULL ,
+     email VARCHAR( 100 ) NOT NULL UNIQUE,
      gender VARCHAR(4) NOT NULL,
-     country VARCHAR (25) NOT NULL,
-     phone_number VARCHAR (25) NOT NULL,
+     country VARCHAR (100) NOT NULL,
+     address VARCHAR (100) NOT NULL,
+     phone_number VARCHAR (100) NOT NULL,
      date_of_birth DATE NOT NULL,
-     password VARCHAR (25) NOT NULL,
+     password VARCHAR (100) NOT NULL,
      date_created DATE NOT NULL
 );
 CREATE TABLE tbl_order (

@@ -11,7 +11,7 @@ require($DOCUMENT_ROOT . "header.inc.php");
 <div class="panel panel-default mr-top-20">
   <div class="panel-heading">Sign Up</div>
   <div class="panel-body">
-        <form id="signupForm" class="mr-top-20" method="POST" action="#" accept-charset="UTF-8">
+        <form id="signupForm" class="mr-top-20" method="POST" action="php/add_customer_svc.php" accept-charset="UTF-8">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-asterisk fa-2"></i></span>
             <input id="firstname" class="form-control input-lg" placeholder="Firstname" required="required" maxlength="60" type="text" name="firstname">
@@ -30,6 +30,10 @@ require($DOCUMENT_ROOT . "header.inc.php");
           </div>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-asterisk fa-2"></i></span>
+            <input id="address" class="form-control input-lg" placeholder="Address" required="required" maxlength="100" type="text" name="address">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-asterisk fa-2"></i></span>
             <input id="phonenumber" class="form-control input-lg" placeholder="Phone number" required="required" maxlength="60" type="text" name="phonenumber">
           </div>
 
@@ -41,10 +45,6 @@ require($DOCUMENT_ROOT . "header.inc.php");
             </span>
           </div>
 
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-asterisk fa-2"></i></span>
-            <input id="sport" class="form-control input-lg" placeholder="Sport of interest" required="required" maxlength="60" type="text" name="sport">
-          </div>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope fa-2"></i></span>
             <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="text" name="email" value="">
