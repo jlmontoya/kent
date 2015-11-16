@@ -61,7 +61,7 @@
         <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
         <li><a href="registration.php">Sign up</a></li>
-        <li><a href="php/admin.php">Sign in</a></li>
+        <li><a href="signin.php">Sign in</a></li>
         <li><a href="admin/">Admin</a></li>
       </ul>
 
