@@ -63,8 +63,13 @@ $result = $db->query("SELECT * FROM tbl_category Order by name ASC");
                   ?>
                     </div>
               <?php }
-
               }
+
+              if($i != 0 ) {
+                ?>
+                    </div>
+              <?php }
+
               mysqli_free_result($resultProducts);
               ?>
         </div>
