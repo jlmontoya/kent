@@ -1,9 +1,13 @@
+<?php
+  include_once "connect.php";
+  $result = $db->query("SELECT * FROM tbl_category Order by name ASC");
+?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Fashionee Administration</title>
+    <title>Fashionee</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -39,20 +43,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../index.php">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../products.php">Corporate</a></li>
-            <li><a href="../products.php">Sports</a></li>
-            <li><a href="../products.php">Work</a></li>
+            <?php while($row = $result->fetch_assoc()) { ?>
+              <li >
+                <a href="../products.php?category_id=<?php echo $row['id'] ?>"> <?php echo $row['name'] ?></a>
+              </li>
+            <?php }
+                mysqli_free_result($result);
+                mysqli_close($db);
+            ?>
           </ul>
         </li>
         <li><a href="../about.php">About</a></li>
         <li><a href="../contact.php">Contact</a></li>
         <li><a href="../registration.php">Sign up</a></li>
-        <li><a href="../login.php">Sign in</a></li>
+        <li><a href="../signin.php">Sign in</a></li>
+        <li><a href="../admin/">Admin</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
