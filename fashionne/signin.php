@@ -21,7 +21,7 @@ require("header.inc.php");
 <div class="panel panel-default mr-top-20">
   <div class="panel-heading">Customer Sign In</div>
   <div class="panel-body">
-        <form id="signupForm" class="mr-top-20" method="POST" action="php/authenticator.php" accept-charset="UTF-8">
+        <form id="signupForm" class="mr-top-20" method="POST" action="customer/authenticator.php" accept-charset="UTF-8">
 
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope fa-2"></i></span>

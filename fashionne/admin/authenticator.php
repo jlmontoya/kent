@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             session_start();
             $_SESSION['id'] = session_id();
             $_SESSION['user.fullname'] = $row['first_name']." ".$row['last_name'];
-            header('Location: admin.php');
+            header('Location: customer.php');
         }else {
-             header('Location: login.php?error=true');
+             header('Location: index.php?error=true');
         }
 
         mysqli_free_result($result);

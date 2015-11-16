@@ -1,7 +1,11 @@
+<?php
+  require_once('authenticate.php');
+  include_once "connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require($DOCUMENT_ROOT . "header.inc.php");
+  require("header.admin.inc.php");
 ?>
 
   <div class="container">
@@ -9,9 +13,9 @@ require($DOCUMENT_ROOT . "header.inc.php");
       <div class="col-md-6 col-md-offset-3">
 
 <div class="panel panel-default mr-top-20">
-  <div class="panel-heading">Sign Up</div>
+  <div class="panel-heading">Add Customer</div>
   <div class="panel-body">
-        <form id="signupForm" class="mr-top-20" method="POST" action="customer/add_customer_svc.php" accept-charset="UTF-8">
+        <form id="signupForm" class="mr-top-20" method="POST" action="customer_add_svc.php" accept-charset="UTF-8">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-asterisk fa-2"></i></span>
             <input id="firstname" class="form-control input-lg" placeholder="Firstname" required="required" maxlength="60" type="text" name="firstname">
@@ -58,7 +62,7 @@ require($DOCUMENT_ROOT . "header.inc.php");
             <input id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" required="required" maxlength="60" type="password" name="password_confirmation">
           </div>
           <div class="form-group">
-            <button type="submit" id="btn-signup" class="btn btn-block btn-primary btn-lg">Sign Up</button>
+            <button type="submit" id="btn-signup" class="btn btn-block btn-primary btn-lg">Create</button>
           </div>
         </form>
       </div>
@@ -69,7 +73,7 @@ require($DOCUMENT_ROOT . "header.inc.php");
   </div>
 
   <?php
-  require($DOCUMENT_ROOT . "footer.inc.php");
+  require($DOCUMENT_ROOT . "footer.admin.inc.php");
   ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

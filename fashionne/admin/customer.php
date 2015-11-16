@@ -18,7 +18,7 @@
   <!-- Default panel contents -->
   <div class="panel-heading">Customers</div>
   <div class="panel-body">
-    <a href="admin_add.php" style="width:200px;" id="addmember" class="btn btn-block btn-primary btn-lg">Add a Customer</a>
+    <a href="customer_add.php" style="width:200px;" id="addmember" class="btn btn-block btn-primary btn-lg">Add a Customer</a>
   </div>
 
   <!-- Table -->
@@ -36,7 +36,7 @@
         <td> <?php echo $row['first_name'] ?></td>
         <td> <?php echo $row['last_name'] ?></td>
         <td> <?php echo $row['email'] ?></td>
-        <td> <?php echo  "<a href='admin_edit.php?edit=$row[id]'>Edit</a> / <a href='admin_delete.php?del=$row[id]'>Delete</a>";?></td>
+        <td> <?php echo  "<a href='customer_edit.php?edit=$row[id]'>Edit</a> / <a href='customer_delete_svc.php?del=$row[id]'>Delete</a>";?></td>
       </tr>
     <?php }
         mysqli_free_result($result);

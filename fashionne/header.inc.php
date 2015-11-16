@@ -1,5 +1,5 @@
 <?php
-  include_once "php/connect.php";
+  include_once "customer/connect.php";
   $result = $db->query("SELECT * FROM tbl_category Order by name ASC");
 ?>
   <head>
