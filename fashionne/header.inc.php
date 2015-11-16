@@ -1,3 +1,7 @@
+<?php
+  include_once "php/connect.php";
+  $result = $db->query("SELECT * FROM tbl_category Order by name ASC");
+?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,9 +48,14 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="products.php">Corporate</a></li>
-            <li><a href="products.php">Sports</a></li>
-            <li><a href="products.php">Work</a></li>
+            <?php while($row = $result->fetch_assoc()) { ?>
+              <li >
+                <a href="products.php?category_id=<?php echo $row['id'] ?>"> <?php echo $row['name'] ?></a>
+              </li>
+            <?php }
+                mysqli_free_result($result);
+                mysqli_close($db);
+            ?>
           </ul>
         </li>
         <li><a href="about.php">About</a></li>

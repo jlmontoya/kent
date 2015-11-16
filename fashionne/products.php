@@ -2,6 +2,9 @@
 <html lang="en">
 <?php
 require($DOCUMENT_ROOT . "header.inc.php");
+$db = connectToMysql();
+$category_id = htmlspecialchars($_GET["category_id"]);
+$result = $db->query("SELECT * FROM tbl_category Order by name ASC");
 ?>
 
 <div class="container">
@@ -10,251 +13,67 @@ require($DOCUMENT_ROOT . "header.inc.php");
         <h1>Garment Products</h1>
       </div>
       <div class="row">
-    <div class="col-md-3">
-      <ul class="nav nav-pills nav-stacked " role="tablist">
-        <li role="presentation" class="active"><a href="#corporate" role="tab" data-toggle="tab">Corporate</a></li>
-        <li role="presentation"><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-        <li role="presentation"><a href="#work" role="tab" data-toggle="tab" >Work</a></li>
-      </ul>
-    </div>
+        <div class="col-md-3">
+          <ul class="nav nav-pills nav-stacked " role="tablist">
+
+        <?php while($row = $result->fetch_assoc()) { ?>
+            <li role="presentation" class="<?php if($category_id == $row['id']){ echo 'active'; }?>"><a href="#<?php echo $row['name'] ?>" role="tab" data-toggle="tab"> <?php echo $row['name'] ?></a></li>
+        <?php }
+            mysqli_free_result($result);
+            mysqli_close($db);
+        ?>
+          </ul>
+      </div>
 
       <div class="tab-content col-md-8">
-        <div  role="tabpanel" class="tab-pane active" id="corporate">
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/corporate1.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Corporate 1</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/corporate2.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Corporate 2</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/corporate3.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Corporate 3</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/corporate4.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Corporate 4</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/corporate5.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Corporate 5</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/corporate6.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Corporate 6</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
 
-        <div role="tabpanel" class="tab-pane fade" id="sports">
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/sports1.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Sports 1</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/sports2.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Sports 2</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/sports3.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Sports 3</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/sports4.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Sports 4</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/sports5.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Sports 6</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/sports6.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Sports 7</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <?php
+
+          $db = connectToMysql();
+          $resultCategories = $db->query("SELECT * FROM tbl_category Order by name ASC");
+          while($category = $resultCategories->fetch_assoc()) {
+        ?>
+        <div  role="tabpanel" class="tab-pane <?php if($category_id == $category['id']){ echo 'active'; }?>" id="<?php echo $category['name'] ?>">
+
+              <?php
+                $resultProducts = $db->query("SELECT p.id as id, p.name as name, p.size as size, c.name as category, p.price as price, p.photo_path as photo_path FROM tbl_product p join tbl_category c on p.category_id = c.id and c.id =".$category['id']. "  Order by p.name ASC");
+                $i=0;
+                while($product = $resultProducts->fetch_assoc()) {
+              ?>
+                  <?php if($i==0) {?>
+                    <div class="row">
+                  <?php } ?>
+
+                    <div class="col-sm-6 col-md-4">
+                      <div class="thumbnail">
+                        <img src="<?php echo $product['photo_path'] ?>" alt="<?php echo $product['name'] ?>">
+                        <div class="caption">
+                          <h3><?php echo $product['name'] ?></h3>
+                          <p>Price $<?php echo $product['price'] ?></p>
+                          <p>
+                            <a href="#" class="btn btn-primary" role="button">Buy</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  <?php
+                   $i++;
+                   if($i==3) {
+                       $i = 0;
+                  ?>
+                    </div>
+              <?php }
+
+              }
+              mysqli_free_result($resultProducts);
+              ?>
         </div>
-        <div  role="tabpanel" class="tab-pane fade" id="work">
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/work1.jpg" alt="...">
-                  <div class="caption">
-                    <h3>work 1</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/work2.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Work 2</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/work3.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Work 3</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/work4.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Work 4</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/work5.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Work 5</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="img/work6.jpg" alt="...">
-                  <div class="caption">
-                    <h3>Work 6</h3>
-                    <p>...</p>
-                    <p>
-                      <a href="#" class="btn btn-primary" role="button">Buy</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
+        <?php
+          }
+          mysqli_free_result($resultCategories);
+          mysqli_close($db);
+        ?>
+      </div>
   </div>
 </div>
 
