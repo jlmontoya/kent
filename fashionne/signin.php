@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -32,6 +35,7 @@ require("header.inc.php");
             <input id="password" class="form-control input-lg" placeholder="Password" required="required" maxlength="60" type="password" name="password">
           </div>
           <div class="form-group">
+            <small>joseph@gmail.com/password</small>
             <button type="submit" id="btn-signin" class="btn btn-block btn-primary btn-lg">Sign In</button>
           </div>
         </form>

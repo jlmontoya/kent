@@ -60,9 +60,15 @@
         </li>
         <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
+        <?php if(empty($_SESSION['id'])) {  ?>
         <li><a href="registration.php">Sign up</a></li>
         <li><a href="signin.php">Sign in</a></li>
         <li><a href="admin/">Admin</a></li>
+        <?php } else { ?>
+            <li><a href="orders.php">Orders</a></li>
+          <li><a href="#">Welcome <span style="color:yellow"><?php echo $_SESSION['user.fullname'] ?></span></a></li>
+          <li><a href="customer/logout.php">Logout</a></li>
+        <?php } ?>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

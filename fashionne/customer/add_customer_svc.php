@@ -20,5 +20,5 @@
 
 	mysqli_close($db);
 
-	header("Location: ../");
+	header("Location: orders.php");
 ?>

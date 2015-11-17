@@ -13,7 +13,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Categories</div>
+  <div class="panel-heading"><h1>Categories</h1></div>
   <div class="panel-body">
     <a href="category_add.php" style="width:200px;" id="addmember" class="btn btn-block btn-primary btn-lg">Add Category</a>
   </div>

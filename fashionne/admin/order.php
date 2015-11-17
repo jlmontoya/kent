@@ -1,7 +1,7 @@
 <?php
   require_once('authenticate.php');
   include_once "connect.php";
-  $result = $db->query("SELECT p.id as id, p.name as name, p.size as size, c.name as category, p.price as price, p.photo_path as photo_path FROM tbl_product p join tbl_category c on p.category_id = c.id Order by p.name ASC");
+  $result = $db->query("SELECT o.id as id, o.date_placed as date, c.first_name as firstname, c.last_name  as lastname, o.total as total FROM tbl_order o join tbl_customer c on o.customer_id = c.id Order by o.date_placed DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,31 +13,25 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Categories</div>
-  <div class="panel-body">
-    <a href="product_add.php" style="width:200px;" id="addmember" class="btn btn-block btn-primary btn-lg">Add Product</a>
-  </div>
+  <div class="panel-heading"><h1>Orders</h1></div>
+
 
   <!-- Table -->
   <table class="table">
 
     <tr>
-      <th>Photo</th>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Category</th>
-      <th>Price</th>
+      <th>Date</th>
+      <th>Customer</th>
+      <th>Total</th>
       <th>Actions</th>
     </tr>
     <tbody>
     <?php while($row = $result->fetch_assoc()) { ?>
       <tr>
-        <td style="vertical-align:middle"><img style="width:100px;height:100px;" class="thumbnail" src="<?php echo '../'.$row['photo_path'] ?>" alt="<?php echo $row['name'] ?>"></td>
-        <td style="vertical-align:middle"> <?php echo $row['name'] ?></td>
-        <td style="vertical-align:middle"> <?php echo $row['size'] ?></td>
-        <td style="vertical-align:middle"> <?php echo $row['category'] ?></td>
-        <td style="vertical-align:middle"> <?php echo $row['price'] ?></td>
-        <td style="vertical-align:middle"> <?php echo  "<a href='product_edit.php?edit=$row[id]'>Edit</a> / <a href='product_delete_svc.php?del=$row[id]'>Delete</a>";?></td>
+        <td style="vertical-align:middle"> <?php echo $row['date'] ?></td>
+        <td style="vertical-align:middle"> <?php echo $row['firstname'] .' '. $row['lastname'] ?></td>
+        <td style="vertical-align:middle"> <?php echo $row['total'] ?></td>
+        <td style="vertical-align:middle"> <?php echo  "<a href='order_details.php?id=$row[id]'>Details</a> / <a href='order_ship_svc.php?del=$row[id]'>Ship</a>";?></td>
       </tr>
     <?php }
         mysqli_free_result($result);

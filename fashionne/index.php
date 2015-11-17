@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -48,7 +51,7 @@ require($DOCUMENT_ROOT . "header.inc.php");
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p class="text-center"><a href="camping.html" role="button">View more</a></p>
+          <p class="text-center"><a href="products.php?category_id=1" role="button">View more</a></p>
         </div><!-- /.col-md-4 -->
 
         <div class="col-md-4">
@@ -62,7 +65,7 @@ require($DOCUMENT_ROOT . "header.inc.php");
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p class="text-center"><a href="camping.html" role="button">View more</a></p>
+          <p class="text-center"><a href="products.php?category_id=2" role="button">View more</a></p>
         </div><!-- /.col-md-4 -->
         <div class="col-md-4">
           <div class="thumbnail thumbnail-noborder">
@@ -75,7 +78,7 @@ require($DOCUMENT_ROOT . "header.inc.php");
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p class="text-center"><a href="camping.html" role="button">View more</a></p>
+          <p class="text-center"><a href="products.php?category_id=3" role="button">View more</a></p>
         </div><!-- /.col-md-4 -->
       </div><!-- /.row -->
     </section>

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password =  $db->real_escape_string($password);
         $password = md5($password);
 
-        $result = $db->query("SELECT first_name,last_name FROM tbl_customer WHERE email='$username' and password='$password'");
+        $result = $db->query("SELECT id,first_name,last_name FROM tbl_customer WHERE email='$username' and password='$password'");
         $count = mysqli_num_rows($result);
 
         if($count == 1 ) {
@@ -24,8 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $row = $result->fetch_assoc();
             session_start();
             $_SESSION['id'] = session_id();
-            $_SESSION['user.fullname'] = $row['fname']." ".$row['lname'];
-            header('Location: admin.php');
+            $_SESSION['user.fullname'] = $row['first_name']." ".$row['last_name'];
+            $_SESSION['user.id'] = $row['id'];
+            header('Location: ../orders.php');
         }else {
              header('Location: ../signin.php?error=true');
         }

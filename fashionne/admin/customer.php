@@ -16,7 +16,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Customers</div>
+  <div class="panel-heading"><h1>Customers</h1></div>
   <div class="panel-body">
     <a href="customer_add.php" style="width:200px;" id="addmember" class="btn btn-block btn-primary btn-lg">Add a Customer</a>
   </div>

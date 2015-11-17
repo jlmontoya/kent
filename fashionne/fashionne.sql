@@ -33,6 +33,10 @@ CREATE TABLE tbl_customer (
      password VARCHAR (100) NOT NULL,
      date_created DATE NOT NULL
 );
+
+INSERT INTO tbl_customer (first_name, last_name, email, gender, country, address, phone_number, date_of_birth, password , date_created) values ('Joshep','Barron','joseph@gmail.com','Male','Australia','Batrusth st 123','0401234567','1988-12-07',md5('password'), now() );
+
+
 CREATE TABLE tbl_order (
      id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY ,
      customer_id INT  NOT NULL,
@@ -77,16 +81,23 @@ INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) val
 INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (1, 'Corporate 5', 'Small', 'Blue', 'uploads/corporate5.jpg', 10.99 );
 INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (1, 'Corporate 6', 'Small', 'Blue', 'uploads/corporate6.jpg', 10.99 );
 
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 1', 'Small', 'Blue', 'uploads/work1.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 2', 'Small', 'Blue', 'uploads/work2.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 3', 'Small', 'Blue', 'uploads/work3.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 4', 'Small', 'Blue', 'uploads/work4.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 5', 'Small', 'Blue', 'uploads/work5.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 6', 'Small', 'Blue', 'uploads/work6.jpg', 10.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 1', 'Small', 'Blue', 'uploads/work1.jpg', 11.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 2', 'Small', 'Blue', 'uploads/work2.jpg', 11.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 3', 'Small', 'Blue', 'uploads/work3.jpg', 11.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 4', 'Small', 'Blue', 'uploads/work4.jpg', 11.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 5', 'Small', 'Blue', 'uploads/work5.jpg', 11.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (3, 'Work 6', 'Small', 'Blue', 'uploads/work6.jpg', 11.99 );
 
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 1', 'Small', 'Blue', 'uploads/sports1.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 2', 'Small', 'Blue', 'uploads/sports2.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 3', 'Small', 'Blue', 'uploads/sports3.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 4', 'Small', 'Blue', 'uploads/sports4.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 5', 'Small', 'Blue', 'uploads/sports5.jpg', 10.99 );
-INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 6', 'Small', 'Blue', 'uploads/sports6.jpg', 10.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 1', 'Small', 'Blue', 'uploads/sports1.jpg', 12.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 2', 'Small', 'Blue', 'uploads/sports2.jpg', 12.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 3', 'Small', 'Blue', 'uploads/sports3.jpg', 12.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 4', 'Small', 'Blue', 'uploads/sports4.jpg', 12.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 5', 'Small', 'Blue', 'uploads/sports5.jpg', 12.99 );
+INSERT INTO tbl_product (category_id, name, size, color, photo_path, price ) values (2, 'Sports 6', 'Small', 'Blue', 'uploads/sports6.jpg', 12.99 );
+
+INSERT INTO tbl_order (customer_id, date_placed, total) values (1, now(), 100.00 );
+INSERT INTO tbl_order_item (order_id, product_id, quantity, price ) values (1, 1, 2, 25.00 );
+INSERT INTO tbl_order_item (order_id, product_id, quantity, price ) values (1, 2, 2, 25.00 );
+INSERT INTO tbl_order (customer_id, date_placed, total) values (1, now(), 50.00 );
+INSERT INTO tbl_order_item (order_id, product_id, quantity, price ) values (2, 1, 1, 25.00 );
+INSERT INTO tbl_order_item (order_id, product_id, quantity, price ) values (2, 2, 1, 25.00 );
